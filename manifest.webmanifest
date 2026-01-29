@@ -1,0 +1,21 @@
+{
+  "name": "Body Tune - 生活習慣支援ツール",
+  "short_name": "Body Tune",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#222222",
+  "theme_color": "#333333",
+  "description": "運動習慣と水分補給のサポート",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
