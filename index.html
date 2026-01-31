@@ -133,7 +133,7 @@
         .action-column { flex: 1; display: flex; flex-direction: column; gap: 12px; }
         
         /* 指令表示パネル */
-        #mission-display { background: #141618; border-radius: 10px; padding: 15px; text-align: center; min-height: 2.5em; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: bold; color: var(--mission-color); border: 1px solid rgba(255,204,0,0.1); }
+        #mission-display { background: #141618; border-radius: 10px; padding: 15px; text-align: center; min-height: 2.5em; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: bold; color: var(--mission-color); border: 1px solid rgba(255,204,0,0.1); white-space: pre-line; }
         
         /* ログ入力欄 */
         #action-input { background: #000; border: 1px solid #222; color: var(--mission-color); padding: 15px; font-size: 1.1rem; text-align: center; width: 100%; box-sizing: border-box; border-radius: 10px; }
@@ -274,8 +274,8 @@
         const LS_KEY = "survival_ex_data_v5_balanced"; 
         const missions = [
             "バーピージャンプ", "ランジ", "バックランジ", "サイドランジ", "スクワット",
-            "腕立て", "ドロップランジ", "ジャンピングスクワット", "プランク", "マウンテンクライマー",
-            "ジャンピングジャック", "サイドベント", "ウォーキングクランチ", "ワイドスクワット", "シングルレッグヒップリフト", "かかと上げ下げ"
+            "腕立て", "ドロップランジ", "ジャンピング\nスクワット", "プランク", "マウンテン\nクライマー",
+            "ジャンピング\nジャック", "サイドベント", "ウォーキング\nクランチ", "ワイドスクワット", "シングルレッグ\nヒップリフト", "かかと上げ下げ"
         ];
 
         // ==========================================
