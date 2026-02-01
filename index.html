@@ -346,12 +346,14 @@
         // ページ読み込み時に実行
         window.onload = function() {
             loadData();
+            setupAudioUnlock();
         };
 
         // バックグラウンドからの復帰時にもデータ同期
         document.addEventListener("visibilitychange", () => {
             if (document.visibilityState === 'visible') {
                 loadData();
+                resumeAudioIfNeeded();
             } else {
                 saveData();
             }
@@ -613,9 +615,26 @@
         // ==========================================
         // AUDIO & EFFECTS (音とアニメーション)
         // ==========================================
+        function resumeAudioIfNeeded() {
+            if (audioCtx && audioCtx.state === 'suspended') {
+                audioCtx.resume().catch(() => {});
+            }
+        }
+
+        function setupAudioUnlock() {
+            const unlock = () => {
+                initAudio();
+                resumeAudioIfNeeded();
+            };
+
+            document.addEventListener('pointerdown', unlock, { once: true });
+            document.addEventListener('touchstart', unlock, { once: true });
+            document.addEventListener('keydown', unlock, { once: true });
+        }
+
         function initAudio() {
             if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-            if (audioCtx.state === 'suspended') audioCtx.resume();
+            resumeAudioIfNeeded();
         }
 
         function triggerBtnAnim(btnId) {
